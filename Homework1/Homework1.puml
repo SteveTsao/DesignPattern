@@ -1,0 +1,25 @@
+@startuml
+
+abstract class AbstractObservalbe {
+    +registerObserver
+    +notifyObservers
+}
+
+class clock {
+    -onTick
+    +registerObserver
+    +notifyObservers
+}
+
+abstract class AbstractClockDisplay {
+    +update
+}
+
+class DigitalClock {
+    -right
+    +update
+}
+
+AbstractObservalbe <|-- clock
+AbstractClockDisplay <|-- DigitalClock
+@enduml
