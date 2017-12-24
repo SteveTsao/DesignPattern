@@ -1,0 +1,29 @@
+@startuml
+
+class Clock {
+    -onTick
+}
+
+abstract class AbstractProxy {
+    +publish
+}
+
+class ProxyObservable {
+    +publish
+    +subscribe
+    +unsubscribe
+}
+
+abstract class AbstractSubscriber {
+    +notify
+}
+
+class DigitalClock {
+    -right
+    +update
+}
+
+Clock .> AbstractProxy
+AbstractProxy <|-- ProxyObservable
+AbstractSubscriber <|-- DigitalClock
+@enduml
