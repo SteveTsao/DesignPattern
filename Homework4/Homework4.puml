@@ -1,0 +1,30 @@
+@startuml
+
+class Director {
+    +BuilderComputer
+}
+
+abstract class Builder {
+    {abstract}+buildCPU
+    {abstract}+buildMB
+    +buildHD
+    +buildRAM
+    +buildVGA
+    +getComputer
+}
+
+class AmdBuilder {
+    +buildCPU
+    +buildMB
+}
+
+class IntelBuilder {
+    +buildCPU
+    +buildMB
+}
+
+Director .> Builder
+Builder <|-- AmdBuilder
+Builder <|-- IntelBuilder
+
+@enduml
