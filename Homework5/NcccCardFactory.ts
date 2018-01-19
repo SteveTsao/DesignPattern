@@ -1,16 +1,16 @@
+import { ICreditCard } from "./ICreditCard";
 import { AbstractCardFactory } from "./AbstractCardFactory";
-import { AbstractCreditCard } from "./AbstractCreditCard";
 import { NcccCreditCard } from "./NcccCreditCard";
 
 /**
  * 信用卡聯合中心授權工廠
  */
-export class NcccCardFactory implements AbstractCardFactory {
+export class NcccCardFactory extends AbstractCardFactory {
 
     /**
      * 建立信用卡聯合中心授權物件
      */
-    create(): AbstractCreditCard {
+    create(): ICreditCard {
         return new NcccCreditCard();
     }
 }

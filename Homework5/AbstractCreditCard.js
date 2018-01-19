@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
- * 信用卡授權抽象介面
+ * 信用卡授權抽象類別
  */
 var AbstractCreditCard = /** @class */ (function () {
     function AbstractCreditCard() {
