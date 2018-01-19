@@ -1,0 +1,69 @@
+@startuml
+
+class CardFactory {
+    {static}-factories
+    {static}+createFactory
+}
+
+interface ICardFactory {
+    +create
+}
+
+abstract class AbstractCardFactory {
+    +create
+}
+
+class CathayCardFactory {
+    +create
+}
+
+class CtbcCardFactory {
+    +create
+}
+
+class NcccCardFactory {
+    +create
+}
+
+interface ICreditCard {
+    +auth
+}
+
+abstract class AbstractCreditCard {
+    +auth
+}
+
+class CathayCreditCard {
+    +auth
+}
+
+class CtbcCreditCard {
+    +auth
+}
+
+class NcccCreditCard {
+    +auth
+}
+
+class AuthResultDTO {
+}
+
+CardFactory *-> CathayCardFactory
+CardFactory *-> CtbcCardFactory
+CardFactory *-> NcccCardFactory
+ICardFactory <|.. AbstractCardFactory
+AbstractCardFactory <|-- CathayCardFactory
+AbstractCardFactory <|-- CtbcCardFactory
+AbstractCardFactory <|-- NcccCardFactory
+ICreditCard <|.. AbstractCreditCard
+AbstractCreditCard <|-- CathayCreditCard
+AbstractCreditCard <|-- CtbcCreditCard
+AbstractCreditCard <|-- NcccCreditCard
+CathayCardFactory *-> CathayCreditCard
+CtbcCardFactory *-> CtbcCreditCard
+NcccCardFactory *-> NcccCreditCard
+CathayCreditCard *-> AuthResultDTO
+CtbcCreditCard *-> AuthResultDTO
+NcccCreditCard *-> AuthResultDTO
+
+@enduml
