@@ -1,7 +1,6 @@
 @startuml
 
 class CardFactory {
-    {static}-factories
     {static}+createFactory
 }
 
@@ -48,9 +47,7 @@ class NcccCreditCard {
 class AuthResultDTO {
 }
 
-CardFactory *-> CathayCardFactory
-CardFactory *-> CtbcCardFactory
-CardFactory *-> NcccCardFactory
+CardFactory *-> ICardFactory
 ICardFactory <|.. AbstractCardFactory
 AbstractCardFactory <|-- CathayCardFactory
 AbstractCardFactory <|-- CtbcCardFactory
