@@ -1,0 +1,125 @@
+@startuml
+
+abstract class AbstractCosplayFactory {
+    {static}+createCosplay
+    {abstract}+makeHat
+    {abstract}+makeHelmet
+    {abstract}+makeArmor
+    {abstract}+makeBoots
+    {abstract}+makeArms
+}
+
+abstract class AbstractArmor {
+}
+
+abstract class AbstractArms {
+}
+
+abstract class AbstractBoots {
+}
+
+abstract class AbstractHat {
+}
+
+abstract class AbstractHelmet {
+}
+
+abstract class AbstractProduction {
+    {abstract}+make
+}
+
+
+class BlizzardCosplayFactory {
+    +makeArmor
+    +makeArms
+    +makeBoots
+    +makeHat
+    +makeHelmet
+}
+
+class BlizzardArmor {
+    +make
+}
+
+class BlizzardArms {
+    +make
+}
+
+class BlizzardBoots {
+    +make
+}
+
+class BlizzardHat {
+    +make
+}
+
+class BlizzardHelmet {
+    +make
+}
+
+
+class PokemonCosplayFactory {
+    +makeArmor
+    +makeArms
+    +makeBoots
+    +makeHat
+    +makeHelmet
+}
+
+class PokemonArmor {
+    +make
+}
+
+class PokemonArms {
+    +make
+}
+
+class PokemonBoots {
+    +make
+}
+
+class PokemonHat {
+    +make
+}
+
+class PokemonHelmet {
+    +make
+}
+
+
+AbstractCosplayFactory *-> AbstractCosplayFactory
+AbstractCosplayFactory *-> AbstractArmor
+AbstractCosplayFactory *-> AbstractArms
+AbstractCosplayFactory *-> AbstractBoots
+AbstractCosplayFactory *-> AbstractHat
+AbstractCosplayFactory *-> AbstractHelmet
+AbstractProduction <|-- AbstractArmor
+AbstractProduction <|-- AbstractArms
+AbstractProduction <|-- AbstractBoots
+AbstractProduction <|-- AbstractHat
+AbstractProduction <|-- AbstractHelmet
+
+AbstractCosplayFactory <|-- BlizzardCosplayFactory
+AbstractArmor <|-- BlizzardArmor
+AbstractArms <|-- BlizzardArms
+AbstractBoots <|-- BlizzardBoots
+AbstractHat <|-- BlizzardHat
+AbstractHelmet <|-- BlizzardHelmet
+BlizzardCosplayFactory *-> BlizzardArmor
+BlizzardCosplayFactory *-> BlizzardArms
+BlizzardCosplayFactory *-> BlizzardBoots
+BlizzardCosplayFactory *-> BlizzardHat
+BlizzardCosplayFactory *-> BlizzardHelmet
+
+AbstractCosplayFactory <|-- PokemonCosplayFactory
+AbstractArmor <|-- PokemonArmor
+AbstractArms <|-- PokemonArms
+AbstractBoots <|-- PokemonBoots
+AbstractHat <|-- PokemonHat
+AbstractHelmet <|-- PokemonHelmet
+PokemonCosplayFactory *-> PokemonArmor
+PokemonCosplayFactory *-> PokemonArms
+PokemonCosplayFactory *-> PokemonBoots
+PokemonCosplayFactory *-> PokemonHat
+PokemonCosplayFactory *-> PokemonHelmet
+@enduml
