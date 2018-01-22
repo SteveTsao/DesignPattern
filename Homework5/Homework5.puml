@@ -48,6 +48,9 @@ class AuthResultDTO {
 }
 
 CardFactory *-> ICardFactory
+CardFactory *-> CathayCardFactory
+CardFactory *-> CtbcCardFactory
+CardFactory *-> NcccCardFactory
 ICardFactory <|.. AbstractCardFactory
 AbstractCardFactory <|-- CathayCardFactory
 AbstractCardFactory <|-- CtbcCardFactory
