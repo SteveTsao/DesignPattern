@@ -1,0 +1,36 @@
+@startuml
+
+interface IStrategy {
+    +getOrderAmount
+}
+
+abstract class AbstractStrategy {
+    +getOrderAmount
+    {abstract}#calculateDiscount
+}
+
+class CashBackStrategry {
+    #calculateDiscount
+}
+
+class OffRateStrategy {
+    #calculateDiscount
+}
+
+interface ICashBack {
+    +setCashBack
+}
+
+interface IOffRate {
+    +setOffRate
+}
+
+IStrategy <|.. AbstractStrategy
+AbstractStrategy <|-- CashBackStrategry
+AbstractStrategy <|-- OffRateStrategy
+IStrategy <|-- ICashBack
+IStrategy <|-- IOffRate
+ICashBack <|.. CashBackStrategry
+IOffRate <|.. OffRateStrategy
+
+@enduml
