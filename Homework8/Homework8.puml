@@ -1,0 +1,47 @@
+@startuml
+
+interface PrintInterface {
+    +open
+    +close
+    +print
+    +display
+}
+
+abstract class AbstractPrint {
+    {abstract}+open
+    {abstract}+close
+    {abstract}+print
+    {abstract}+display
+}
+
+class RandomPrint {
+    +open
+    +close
+    +print
+    +display
+}
+
+interface DocumentInterface {
+    +open
+    +close
+    +print
+}
+
+abstract class AbstractDocument {
+    {abstract}+open
+    {abstract}+close
+    {abstract}+print
+}
+
+class DocumentTxt {
+    +open
+    +close
+    +print
+}
+
+PrintInterface <|.. AbstractPrint
+AbstractPrint <|-- RandomPrint
+DocumentInterface <|.. AbstractDocument
+AbstractDocument <|-- DocumentTxt
+AbstractPrint -> DocumentInterface
+@enduml
