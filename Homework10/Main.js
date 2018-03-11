@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var TrafficLightContext_1 = require("./TrafficLightContext");
+var RedLight_1 = require("./RedLight");
+var GreenLight_1 = require("./GreenLight");
+var YellowLight_1 = require("./YellowLight");
+var redLight = new TrafficLightContext_1.TrafficLightContext(RedLight_1.RedLight);
+console.log('紅燈 >> 綠燈 >> 黃燈 >> 紅燈');
+console.log(redLight.request());
+console.log(redLight.request());
+console.log(redLight.request());
+var greenLight = new TrafficLightContext_1.TrafficLightContext(GreenLight_1.GreenLight);
+console.log('綠燈 >> 黃燈 >> 紅燈 >> 綠燈');
+console.log(greenLight.request());
+console.log(greenLight.request());
+console.log(greenLight.request());
+var yellowLight = new TrafficLightContext_1.TrafficLightContext(YellowLight_1.YellowLight);
+console.log('黃燈 >> 紅燈 >> 綠燈 >> 黃燈');
+console.log(yellowLight.request());
+console.log(yellowLight.request());
+console.log(yellowLight.request());
+//# sourceMappingURL=Main.js.map
