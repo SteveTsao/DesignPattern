@@ -1,0 +1,42 @@
+@startuml
+
+class OrderService {
+    +Calculate
+}
+
+interface DecoratorInterface {
+    +GetPrice
+}
+
+abstract class AbstractDecorator {
+    +GetPrice
+}
+
+class CouponDecorator {
+    +GetPrice
+}
+
+class DiscountDecorator {
+    +GetPrice
+}
+
+class GiftDecorator {
+    +GetPrice
+}
+
+class PointDecorator {
+    +GetPrice
+}
+
+class RebateDecorator {
+    +GetPrice
+}
+
+OrderService *-> DecoratorInterface
+DecoratorInterface <|.. AbstractDecorator
+AbstractDecorator <|-- CouponDecorator
+AbstractDecorator <|-- DiscountDecorator
+AbstractDecorator <|-- GiftDecorator
+AbstractDecorator <|-- PointDecorator
+AbstractDecorator <|-- RebateDecorator
+@enduml
